@@ -7,7 +7,7 @@ import Status.*
 case class Article(isDeleted: Boolean, updateDate: LocalDate)
 
 object Article:
-  // Un produit peu disparaître d'un jour à l'autre
+  // Un produit peu disparaître d'un jour à l'autre (après avoir eu isDeleted passé à true, ou supprimé directement)
   // De même qu'un nouveau produit peu apparaître un jour
   def computeStatus(previousArticle: Option[Article], todayArticle: Option[Article]): Status =
     (previousArticle, todayArticle) match
